@@ -1,0 +1,407 @@
+/jeans-tops-store
+  ├── index.html
+  ├── styles.css
+  └── script.js<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Denim & Co. | Jeans & Tops</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👖</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Denim <span>&</span> Co.</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#jeans">Jeans</a></li>
+        <li><a href="#tops">Tops</a></li>
+        <li><a href="#sale">Sale</a></li>
+      </ul>
+    </nav>
+    <div class="header-icons">
+      <a href="#" class="search-btn"><i class="fas fa-search"></i></a>
+      <a href="#" class="cart-btn" onclick="toggleCart()">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Fresh Styles for <span>You</span></h1>
+      <p>Discover the latest collection of premium jeans and tops</p>
+      <a href="#jeans" class="btn">Shop Now</a>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&h=700&fit=crop" alt="Fashion">
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories">
+    <div class="category-card">
+      <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=400&h=500&fit=crop" alt="Jeans">
+      <div class="category-info">
+        <h3>Jeans</h3>
+        <a href="#jeans" class="btn-outline">View Collection</a>
+      </div>
+    </div>
+    <div class="category-card">
+      <img src="https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?w=400&h=500&fit=crop" alt="Tops">
+      <div class="category-info">
+        <h3>Tops</h3>
+        <a href="#tops" class="btn-outline">View Collection</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Jeans Collection -->
+  <section class="products" id="jeans">
+    <div class="section-header">
+      <h2>Jeans Collection</h2>
+      <p>Premium denim in every style</p>
+    </div>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&h=500&fit=crop" alt="Skinny Jeans">
+          <span class="badge">Best Seller</span>
+          <div class="product-overlay">
+            <button onclick="addToCart('Classic Skinny Jeans', 79.99)">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h4>Classic Skinny Jeans</h4>
+          <p class="price">$79.99</p>
+          <div class="colors">
+            <span class="color-dot" style="background: #1a365d;"></span>
+            <span class="color-dot" style="background: #718096;"></span>
+            <span class="color-dot" style="background: #2d3748;"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1582552938357-32b906df40cb?w=400&h=500&fit=crop" alt="Slim Fit Jeans">
+          <div class="product-overlay">
+            <button onclick="addToCart('Slim Fit Jeans', 89.99)">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h4>Slim Fit Jeans</h4>
+          <p class="price">$89.99</p>
+          <div class="colors">
+            <span class="color-dot" style="background: #1a365d;"></span>
+            <span class="color-dot" style="background: #48bb78;"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1565084888279-aca607ecce0c?w=400&h=500&fit=crop" alt="Bootcut Jeans">
+          <span class="badge sale">Sale</span>
+          <div class="product-overlay">
+            <button onclick="addToCart('Bootcut Jeans', 59.99)">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h4>Bootcut Jeans</h4>
+          <p class="price"><span class="old-price">$89.99</span> $59.99</p>
+          <div class="colors">
+            <span class="color-dot" style="background: #1a365d;"></span>
+            <span class="color-dot" style="background: #9f7aea;"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=400&h=500&fit=crop" alt="High Waist Jeans">
+          <div class="product-overlay">
+            <button onclick="addToCart('High Waist Jeans', 99.99)">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h4>High Waist Jeans</h4>
+          <p class="price">$99.99</p>
+          <div class="colors">
+            <span class="color-dot" style="background: #1a365d;"></span>
+            <span class="color-dot" style="background: #ed8936;"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tops Collection -->
+  <section class="products" id="tops">
+    <div class="section-header">
+      <h2>Tops Collection</h2>
+      <p>Chic tops for every occasion</p>
+    </div>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?w=400&h=500&fit=crop" alt="Crop Top">
+          <span class="badge new">New</span>
+          <div class="product-overlay">
+            <button onclick="addToCart('Basic Crop Top', 29.99)">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h4>Basic Crop Top</h4>
+          <p class="price">$29.99</p>
+          <div class="colors">
+            <span class="color-dot" style="background: #faf5ff;"></span>
+            <span class="color-dot" style="background: #1a365d;"></span>
+            <span class="color-dot" style="background: #feb2b2;"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=400&h=500&fit=crop" alt="Blouse">
+          <div class="product-overlay">
+            <button onclick="addToCart('Floral Blouse', 49.99)">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h4>Floral Blouse</h4>
+          <p class="price">$49.99</p>
+          <div class="colors">
+            <span class="color-dot" style="background: #fed7d7;"></span>
+            <span class="color-dot" style="background: #c6f6d5;"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=400&h=500&fit=crop" alt="T-Shirt">
+          <div class="product-overlay">
+            <button onclick="addToCart('Classic T-Shirt', 24.99)">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h4>Classic T-Shirt</h4>
+          <p class="price">$24.99</p>
+          <div class="colors">
+            <span class="color-dot" style="background: #ffffff;"></span>
+            <span class="color-dot" style="background: #1a365d;"></span>
+            <span class="color-dot" style="background: #48bb78;"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&h=500&fit=crop" alt="Tank Top">
+          <span class="badge sale">Sale</span>
+          <div class="product-overlay">
+            <button onclick="addToCart('Tank Top', 19.99)">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h4>Casual Tank Top</h4>
+          <p class="price"><span class="old-price">$29.99</span> $19.99</p>
+          <div class="colors">
+            <span class="color-dot" style="background: #1a365d;"></span>
+            <span class="color-dot" style="background: #ed8936;"></span>
+            <span class="color-dot" style="background: #1a202c;"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sale Banner -->
+  <section class="sale-banner" id="sale">
+    <div class="sale-content">
+      <h2>Flash Sale</h2>
+      <p>Up to <span>50% OFF</span> on selected items</p>
+      <p class="sale-date">Ends in: <span id="countdown">02:00:00</span></p>
+      <a href="#jeans" class="btn">Shop Sale</a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="feature">
+      <i class="fas fa-shipping-fast"></i>
+      <h4>Free Shipping</h4>
+      <p>On orders over $100</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-undo"></i>
+      <h4>Easy Returns</h4>
+      <p>30-day return policy</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-lock"></i>
+      <h4>Secure Payment</h4>
+      <p>100% secure checkout</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-headset"></i>
+      <h4>24/7 Support</h4>
+      <p>Dedicated support team</p>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <h3>Subscribe to Our Newsletter</h3>
+    <p>Get 10% off your first order</p>
+    <form class="newsletter-form">
+      <input type="email" placeholder="Enter your email">
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Denim & Co.</h4>
+        <p>Your destination for premium jeans and tops. Fashion that speaks your style.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#jeans">Jeans</a></li>
+          <li><a href="#tops">Tops</a></li>
+          <li><a href="#sale">Sale</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Customer Service</h4>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Fashion Street, NY</p>
+        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+        <p><i class="fas fa-envelope"></i> hello@denimco.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Denim & Co. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Sidebar -->
+  <div class="cart-sidebar" id="cart">
+    <div class="cart-header">
+      <h3>Shopping Cart</h3>
+      <button class="close-cart" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="empty-cart">Your cart is empty</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button class="checkout-btn">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+
+  <script src="script.js"></script>
+</body>
+</html> /* ===== CSS Variables ===== */
+:root {
+  --primary: #1a365d;
+  --secondary: #2c5282;
+  --accent: #e53e3e;
+  --light: #f7fafc;
+  --dark: #1a202c;
+  --gray: #718096;
+  --white: #ffffff;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: var(--dark);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none    /* ===== CSS Variables ===== */
+:root {
+  --primary: #1a365d;
+  --secondary: #2c5282;
+  --accent: #e53e3e;
+  --light: #f7fafc;
+  --dark: #1a202c;
+  --gray: #718096;
+  --white: #ffffff;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: var(--dark);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none
